@@ -1,0 +1,349 @@
+/* START CSS PROJECTS WITH THIS LINE (workflow)*/
+* {
+    /* Alternative box model */
+    box-sizing: border-box;
+
+    /* Reset padding and margin on all elements */
+    padding: 0;
+    margin: 0;
+}
+
+/* Typography */
+html {
+    font-size: 18px;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.55;
+    /* line height calculation 
+    (css font-size / line-height in figma or design) */
+    color: rgb(60, 58, 76); 
+    /* use rgb so when using other shades it'll be easier using opacity */
+}
+
+h1 {
+    font-size: 3.15rem;
+    font-weight: 700;
+    letter-spacing: -.05em;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 300;
+    letter-spacing: -.03em;
+    color: rgba(60, 58, 76, .8); 
+}
+
+h3 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -.05em;
+    margin-bottom: 2rem;
+}
+
+h3.large {
+    font-size: 3.15rem;
+}
+
+.dark h3 {
+    color: rgb(255, 255, 255);
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1.3rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+p.section-intro {
+    font-weight: 200;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+
+}
+
+.dark p.section-intro {
+    color: rgba(255, 255, 255, .8);
+}
+
+p.number {
+    font-size: 2.4rem;
+    font-weight: 200;
+    color: rgba(60, 58, 76, .5);
+}
+
+p.large {
+    font-size: 1.75rem;
+    font-weight: 200;
+    letter-spacing: -.01em;
+}
+
+a {
+    font-weight: 700;
+    text-decoration: none;
+    color: rgb(159, 118, 87);
+}
+
+a:hover {
+    color:rgb(60, 58, 76)
+}
+
+form input,
+form text area,
+form button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+/* You need this because sometimes they dont inherit automatically from html {} */
+}
+
+/* Container Layout Part */
+.container {
+    width: 85%;
+    margin: 0 auto;
+    /* IMPORTANT: Set this for AUTOLAYOUT on other screens */
+}
+
+.container.small {
+    width: 60%;
+    max-width: 35rem;
+    /* IMPORTANT: Set this for AUTOLAYOUT on other screens */
+}
+
+/* Header */
+
+#main-header,
+section {
+    padding: 13rem 0;
+    text-align: center;
+}
+
+#main-header h1 {
+    margin: 7rem 0 1rem 0;
+}
+#main-header h2 {
+    margin-bottom: 7rem;
+}
+
+.btn {
+    padding: 1.3rem 3.5rem;
+    border: 1px solid rgb(159, 118, 87);
+    font-weight: 700;
+}
+
+.btn:hover {
+    background-color: rgb(60, 58, 76);
+    border-color: rgb(60, 58, 76);
+    color: rgb(255, 255, 255);
+}
+
+/* Product Section */
+#our-chairs {
+    background-color: #eff0ea;
+}
+
+section header {
+    margin-bottom: 3.5rem;
+}
+
+h3 + p {
+/* This is used if you want to target just a specific paragraph */
+    max-width: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallery {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; OR*/
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.5rem;
+    margin-bottom: 3.5rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+.gallery div {
+    text-align: start;
+}
+
+.gallery img {
+    margin-bottom: 1.3rem;
+}
+
+/* Form Dark Section */
+.dark {
+    background-color: rgb(60, 58, 76);
+}
+
+.dark label {
+    color: rgba(255, 255, 255, .8);
+}
+
+form div {
+    margin-bottom: 1.75rem;
+}
+
+form label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: .01em;
+    text-align: start;
+    margin-bottom: .5rem;
+}
+
+form input,
+form textarea {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    resize: none;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, .2);
+}
+
+form button {
+    width: 100%;
+    cursor: pointer;
+}
+
+.dark .btn {
+    border: 1px solid rgba(255, 255, 255, .8);
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+
+.dark .btn:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(60, 58, 76);
+}
+
+p.muted {
+    color: rgba(255, 255, 255, .5);
+}
+
+/* form button + p {
+    margin-top: 1.75rem;
+} */
+
+form button {
+    margin-bottom: 1.75rem;
+}
+
+/* visit store section */
+
+.social-icons {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+p.large + .social-icons {
+    margin-top: 7rem;
+}
+
+footer {
+    padding: 5rem 0;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* Responsive Site */
+
+@media screen and (max-width: 600px) {
+    #main-header h1 {
+        margin-top: 3.5rem;
+    }
+    
+    h1,
+    h3.large {
+        font-size: 2.3rem;
+    }
+
+    h2,
+    p.large {
+        font-size: 1.3rem;
+    }
+
+    h3 {
+        font-size: 1.8rem;
+    }
+
+    .container.small {
+        width: 85%;
+    }
+
+    #main-header,
+    section {
+        padding: 6rem 0;
+    }
+
+    p.large + .social-icons {
+        margin-top: 3.5rem;
+    }
+
+    footer {
+        padding: 2.5rem 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    #main-header h1 {
+        margin-top: 3rem;
+    }
+    
+    h1,
+    h3.large {
+        font-size: 1.8rem;
+    }
+
+    h2,
+    p.large {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .container.small {
+        width: 85%;
+    }
+
+    #main-header,
+    section {
+        padding: 3rem 0;
+    }
+
+    p.large + .social-icons {
+        margin-top: 3rem;
+    }
+
+    footer {
+        padding: 2rem 0;
+    }
+    
+}
